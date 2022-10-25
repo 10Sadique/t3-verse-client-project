@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import { FaUserAlt, FaMoon, FaSun } from 'react-icons/fa';
 
@@ -7,16 +7,37 @@ const Header = () => {
     const [toggle, setToggle] = useState(false);
 
     const navLinks = (
-        <div className="flex flex-col md:flex-row">
-            <Link to={`/courses`} className="btn btn-ghost">
+        <div className="flex md:items-center flex-col md:flex-row">
+            <NavLink
+                to={`/courses`}
+                className={({ isActive }) =>
+                    isActive
+                        ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
+                        : 'font-semibold py-3 px-5 md:py-2 md:px-3'
+                }
+            >
                 Courses
-            </Link>
-            <Link to={`/blog`} className="btn btn-ghost">
+            </NavLink>
+            <NavLink
+                to={`/blog`}
+                className={({ isActive }) =>
+                    isActive
+                        ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
+                        : 'font-semibold py-3 px-5 md:py-2 md:px-3'
+                }
+            >
                 Blog
-            </Link>
-            <Link to={`/faq`} className="btn btn-ghost">
+            </NavLink>
+            <NavLink
+                to={`/faq`}
+                className={({ isActive }) =>
+                    isActive
+                        ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
+                        : 'font-semibold py-3 px-5 md:py-2 md:px-3'
+                }
+            >
                 FAQ
-            </Link>
+            </NavLink>
         </div>
     );
 
@@ -24,7 +45,10 @@ const Header = () => {
         <div className="navbar bg-indigo-600 text-primary-content">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                    <label
+                        tabIndex={0}
+                        className="btn bg-transparent hover:bg-transparent border-0 lg:hidden"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -73,7 +97,7 @@ const Header = () => {
                     )}
                 </div>
                 <div className="btn btn-ghost  bg-indigo-100 rounded-full text-indigo-600 hover:bg-indigo-200">
-                    <FaUserAlt />
+                    <FaUserAlt className="h-6" />
                 </div>
             </div>
         </div>

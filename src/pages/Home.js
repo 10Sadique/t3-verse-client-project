@@ -18,7 +18,7 @@ const Home = () => {
                     </p>
                     <Link
                         to={`/courses`}
-                        className="btn btn-primary normal-case w-full md:w-auto"
+                        className="btn bg-indigo-600 hover:bg-indigo-700 border-0 normal-case w-full md:w-auto"
                     >
                         Show All Courses
                     </Link>
