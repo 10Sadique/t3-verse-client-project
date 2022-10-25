@@ -8,7 +8,7 @@ import { AuthContext } from '../contexts/AuthProvider';
 const Header = () => {
     const [toggle, setToggle] = useState(false);
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const navLinks = (
         <div className="flex flex-col md:items-center md:flex-row">
