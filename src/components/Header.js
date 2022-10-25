@@ -4,7 +4,6 @@ import logo from '../assets/logo.svg';
 import { FaUserAlt, FaMoon, FaSun } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
-import { error } from 'daisyui/src/colors/colorNames';
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
