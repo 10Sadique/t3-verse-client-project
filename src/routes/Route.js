@@ -4,6 +4,7 @@ import SignUp from '../components/SignUp';
 import Main from '../layout/Main';
 import Blog from '../pages/Blog';
 import Courses from '../pages/Courses';
+import ErrorPage from '../pages/ErrorPage';
 import FAQ from '../pages/FAQ';
 import Home from '../pages/Home';
 import SingleCourseDetails from '../pages/SingleCourseDetails';
@@ -35,5 +36,9 @@ export const router = createBrowserRouter([
             { path: '/signin', element: <SignIn /> },
             { path: '/signup', element: <SignUp /> },
         ],
+    },
+    {
+        path: '/*',
+        element: <ErrorPage />,
     },
 ]);

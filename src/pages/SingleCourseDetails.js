@@ -6,7 +6,7 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { TbPoint } from 'react-icons/tb';
 import { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import { Toaster } from 'react-hot-toast';
+// import { Toaster } from 'react-hot-toast';
 
 const SingleCourseDetails = () => {
     const course = useLoaderData();
@@ -152,12 +152,6 @@ const SingleCourseDetails = () => {
                             Description
                         </h1>
                         <p className="text-gray-500">{desc}</p>
-                        <button
-                            className="w-full px-5 py-3 mt-5 font-semibold text-white transition-all duration-300 bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 md:w-auto"
-                            onClick={handlePrint}
-                        >
-                            Download PDF
-                        </button>
                     </div>
                 </div>
                 {/* pricing section */}
@@ -178,7 +172,16 @@ const SingleCourseDetails = () => {
                     </Link>
                 </div>
             </div>
-            <Toaster position="top-center" reverseOrder={false} />
+            <div
+                className="grid place-items-center"
+            >
+                <button
+                    className="w-full px-5 py-3 mx-auto mt-5 font-semibold text-white transition-all duration-300 bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 md:w-auto"
+                    onClick={handlePrint}
+                >
+                    Download PDF
+                </button>
+            </div>
         </div>
     );
 };
