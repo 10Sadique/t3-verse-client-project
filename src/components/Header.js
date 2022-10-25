@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import { FaUserAlt, FaMoon, FaSun } from 'react-icons/fa';
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthProvider';
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+
+    const { user } = useContext(AuthContext);
 
     const navLinks = (
         <div className="flex flex-col md:items-center md:flex-row">
@@ -38,6 +42,28 @@ const Header = () => {
             >
                 FAQ
             </NavLink>
+            {user?.uid ? (
+                <NavLink
+                    className={({ isActive }) =>
+                        isActive
+                            ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
+                            : 'font-semibold py-3 px-5 md:py-2 md:px-3'
+                    }
+                >
+                    Sign Out
+                </NavLink>
+            ) : (
+                <NavLink
+                    to={`/signin`}
+                    className={({ isActive }) =>
+                        isActive
+                            ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
+                            : 'font-semibold py-3 px-5 md:py-2 md:px-3'
+                    }
+                >
+                    Sign In
+                </NavLink>
+            )}
         </div>
     );
 

@@ -18,7 +18,7 @@ const SignUp = () => {
     return (
         <div>
             <h1 className="mb-10 text-4xl text-center font-bebas">Sign Up</h1>
-            <div className="md:w-[40%] w-full bg-gray-100 text-gray-800 font-semibold px-5 py-5 rounded mx-auto">
+            <div className="md:w-[40%] w-full bg-gray-100 text-gray-800 font-semibold px-5 py-5 rounded-lg mx-auto">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-5 space-y-2">
                         <label className="block" htmlFor="name">
