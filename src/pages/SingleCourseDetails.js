@@ -6,7 +6,7 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { TbPoint } from 'react-icons/tb';
 import { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 
 const SingleCourseDetails = () => {
     const course = useLoaderData();
