@@ -11,7 +11,7 @@ const SideNav = ({ selectedCourese }) => {
     }
 
     return (
-        <div className="w-full p-5 bg-indigo-100 rounded-lg">
+        <div className="w-full p-5 bg-gray-100 rounded-lg">
             <h1 className="mb-3 text-xl font-extrabold text-center underline">
                 Course Summery
             </h1>

@@ -52,7 +52,7 @@ const SingleCourseDetails = () => {
                     // style={{ width: '100%', height: window.innerHeight }}
                     className="col-span-1 md:col-span-2"
                 >
-                    <div className="p-5 bg-indigo-100 rounded-lg shadow-md">
+                    <div className="p-5 bg-gray-100 rounded-lg shadow-md">
                         <h1 className="mb-3 text-xl font-extrabold lg:text-4xl">
                             {title}
                         </h1>
@@ -120,7 +120,7 @@ const SingleCourseDetails = () => {
                         <h1 className="mb-3 text-xl font-bold md:text-2xl ">
                             Courese Contents
                         </h1>
-                        <div className="mb-4 divide-y-2 bg-blue-50">
+                        <div className="mb-4 divide-y-2 bg-gray-50">
                             {contents.map((content, i) => (
                                 <div
                                     className="flex items-center gap-2 px-5 py-2"
@@ -161,7 +161,7 @@ const SingleCourseDetails = () => {
                     </div>
                 </div>
                 {/* pricing section */}
-                <div className="col-span-1 p-5 bg-indigo-100 rounded-lg shadow-md h-max">
+                <div className="col-span-1 p-5 bg-gray-100 rounded-lg shadow-md h-max">
                     <div className="mb-3 overflow-hidden rounded-lg shadow-md">
                         <img src={image} alt="" />
                     </div>

@@ -5,7 +5,7 @@ const CourseCard = ({ course, setSelectedCourese }) => {
 
     return (
         <div
-            className="flex flex-col p-3 bg-indigo-100 rounded-lg shadow-md "
+            className="flex flex-col p-3 bg-gray-100 rounded-lg shadow-md "
             onClick={() => setSelectedCourese(course)}
         >
             <div className="w-full mb-5 overflow-hidden rounded-lg shadow-md">
