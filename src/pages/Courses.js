@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CourseCard from '../components/CourseCard';
 import SideNav from '../components/SideNav';

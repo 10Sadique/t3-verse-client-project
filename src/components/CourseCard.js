@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const CourseCard = ({ course, setSelectedCourese }) => {
     const { image, title, language, isBestseller } = course;

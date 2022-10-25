@@ -4,6 +4,7 @@ import Blog from '../pages/Blog';
 import Courses from '../pages/Courses';
 import FAQ from '../pages/FAQ';
 import Home from '../pages/Home';
+import SingleCourseDetails from '../pages/SingleCourseDetails';
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,15 @@ export const router = createBrowserRouter([
             },
             { path: '/blog', element: <Blog /> },
             { path: '/faq', element: <FAQ /> },
+            {
+                path: '/courses/:id',
+                element: <SingleCourseDetails />,
+                loader: async ({ params }) => {
+                    return fetch(
+                        `https://t3-verse-server.vercel.app/courses/${params.id}`
+                    );
+                },
+            },
         ],
     },
 ]);

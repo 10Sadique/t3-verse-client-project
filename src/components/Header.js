@@ -71,7 +71,7 @@ const Header = () => {
                 </div>
                 <Link
                     to={`/`}
-                    className="space-x-3 text-xl font-bold normal-case bg-indigo-700 border-0 btn hover:bg-indigo-700"
+                    className="space-x-2 text-xl normal-case bg-indigo-600 border-0 font-extralight btn hover:bg-indigo-700"
                 >
                     <img
                         className="w-8 p-2 bg-blue-200 rounded-full"
@@ -87,17 +87,13 @@ const Header = () => {
             </div>
             <div className="mr-4 space-x-4 navbar-end">
                 <div
-                    className="grid btn btn-ghost place-items-center"
+                    className="grid w-10 h-10 text-indigo-600 transition-all duration-300 bg-blue-100 rounded-full cursor-pointer place-items-center"
                     onClick={() => setToggle(!toggle)}
                 >
-                    {toggle ? (
-                        <FaMoon className="w-6 h-6" />
-                    ) : (
-                        <FaSun className="w-6 h-6" />
-                    )}
+                    {toggle ? <FaMoon /> : <FaSun />}
                 </div>
-                <div className="text-indigo-600 bg-indigo-100 rounded-full btn btn-ghost hover:bg-indigo-200">
-                    <FaUserAlt className="h-6" />
+                <div className="grid w-10 h-10 text-indigo-600 bg-indigo-100 rounded-full cursor-pointer place-items-center">
+                    <FaUserAlt />
                 </div>
             </div>
         </div>
