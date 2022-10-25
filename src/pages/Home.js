@@ -7,8 +7,8 @@ const Home = () => {
     return (
         <>
             <div className="grid grid-cols-1 md:grid-cols-3 mb-14">
-                <div className="col-span-2 my-auto order-2 md:order-1">
-                    <h1 className="text-5xl md:text-7xl font-bold mb-8">
+                <div className="order-2 col-span-2 my-auto md:order-1">
+                    <h1 className="mb-8 text-5xl font-bold md:text-7xl">
                         Master the Skills to Drive your{' '}
                         <span className="text-indigo-600">Career</span>
                     </h1>
@@ -18,12 +18,12 @@ const Home = () => {
                     </p>
                     <Link
                         to={`/courses`}
-                        className="btn bg-indigo-600 hover:bg-indigo-700 border-0 normal-case w-full md:w-auto"
+                        className="w-full normal-case bg-indigo-600 border-0 btn hover:bg-indigo-700 md:w-auto"
                     >
                         Show All Courses
                     </Link>
                 </div>
-                <div className="md:order-2 w-full mb-10 md:mb-0">
+                <div className="w-full mb-10 md:order-2 md:mb-0">
                     <img className="w-full" src={hero} alt="" />
                 </div>
             </div>

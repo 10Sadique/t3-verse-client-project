@@ -11,7 +11,13 @@ export const router = createBrowserRouter([
         element: <Main />,
         children: [
             { path: '/', element: <Home /> },
-            { path: '/courses', element: <Courses /> },
+            {
+                path: '/courses',
+                element: <Courses />,
+                loader: async () => {
+                    return fetch('https://t3-verse-server.vercel.app/courses');
+                },
+            },
             { path: '/blog', element: <Blog /> },
             { path: '/faq', element: <FAQ /> },
         ],

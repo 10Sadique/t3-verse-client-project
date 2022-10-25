@@ -7,7 +7,7 @@ const Header = () => {
     const [toggle, setToggle] = useState(false);
 
     const navLinks = (
-        <div className="flex md:items-center flex-col md:flex-row">
+        <div className="flex flex-col md:items-center md:flex-row">
             <NavLink
                 to={`/courses`}
                 className={({ isActive }) =>
@@ -42,16 +42,16 @@ const Header = () => {
     );
 
     return (
-        <div className="navbar bg-indigo-600 text-primary-content">
+        <div className="bg-indigo-600 navbar text-primary-content">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label
                         tabIndex={0}
-                        className="btn bg-transparent hover:bg-transparent border-0 lg:hidden"
+                        className="bg-transparent border-0 btn hover:bg-transparent lg:hidden"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
+                            className="w-5 h-5"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -65,16 +65,16 @@ const Header = () => {
                         </svg>
                     </label>
                     {/* sm devices */}
-                    <div className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-indigo-600 rounded-box w-52">
+                    <div className="p-2 mt-3 bg-indigo-600 shadow menu menu-compact dropdown-content rounded-box w-52">
                         {navLinks}
                     </div>
                 </div>
                 <Link
                     to={`/`}
-                    className="btn bg-indigo-700 border-0 hover:bg-indigo-700 normal-case font-bold text-xl space-x-3"
+                    className="space-x-3 text-xl font-bold normal-case bg-indigo-700 border-0 btn hover:bg-indigo-700"
                 >
                     <img
-                        className="w-8 bg-blue-200 rounded-full p-2"
+                        className="w-8 p-2 bg-blue-200 rounded-full"
                         src={logo}
                         alt=""
                     />
@@ -82,12 +82,12 @@ const Header = () => {
                 </Link>
             </div>
             {/* lg devices */}
-            <div className="navbar-center hidden lg:flex">
-                <div className="menu menu-horizontal p-0">{navLinks}</div>
+            <div className="hidden navbar-center lg:flex">
+                <div className="p-0 menu menu-horizontal">{navLinks}</div>
             </div>
-            <div className="navbar-end space-x-4 mr-4">
+            <div className="mr-4 space-x-4 navbar-end">
                 <div
-                    className="btn btn-ghost grid place-items-center"
+                    className="grid btn btn-ghost place-items-center"
                     onClick={() => setToggle(!toggle)}
                 >
                     {toggle ? (
@@ -96,7 +96,7 @@ const Header = () => {
                         <FaSun className="w-6 h-6" />
                     )}
                 </div>
-                <div className="btn btn-ghost  bg-indigo-100 rounded-full text-indigo-600 hover:bg-indigo-200">
+                <div className="text-indigo-600 bg-indigo-100 rounded-full btn btn-ghost hover:bg-indigo-200">
                     <FaUserAlt className="h-6" />
                 </div>
             </div>

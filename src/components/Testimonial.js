@@ -9,13 +9,13 @@ import spotify from '../assets/spotify.png';
 
 const Testimonial = () => {
     return (
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-10 mb-32 mt-40">
-            <img className="w-14 mx-auto" src={amazon} alt="" />
-            <img className="w-14 mx-auto" src={amd} alt="" />
-            <img className="w-14 mx-auto" src={cisco} alt="" />
-            <img className="w-14 mx-auto" src={dropcam} alt="" />
-            <img className="w-14 mx-auto" src={logitech} alt="" />
-            <img className="w-14 mx-auto" src={spotify} alt="" />
+        <div className="grid grid-cols-3 gap-10 mt-40 mb-32 md:grid-cols-6">
+            <img className="mx-auto w-14" src={amazon} alt="" />
+            <img className="mx-auto w-14" src={amd} alt="" />
+            <img className="mx-auto w-14" src={cisco} alt="" />
+            <img className="mx-auto w-14" src={dropcam} alt="" />
+            <img className="mx-auto w-14" src={logitech} alt="" />
+            <img className="mx-auto w-14" src={spotify} alt="" />
         </div>
     );
 };
