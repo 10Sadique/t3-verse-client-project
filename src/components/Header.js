@@ -21,7 +21,7 @@ const Header = () => {
     );
 
     return (
-        <div className="navbar bg-primary text-primary-content">
+        <div className="navbar bg-indigo-600 text-primary-content">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -47,7 +47,7 @@ const Header = () => {
                 </div>
                 <Link
                     to={`/`}
-                    className="btn btn-ghost normal-case font-bold text-xl space-x-3"
+                    className="btn bg-indigo-700 border-0 hover:bg-indigo-700 normal-case font-bold text-xl space-x-3"
                 >
                     <img
                         className="w-8 bg-blue-200 rounded-full p-2"
@@ -61,15 +61,15 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <div className="menu menu-horizontal p-0">{navLinks}</div>
             </div>
-            <div className="navbar-end space-x-3 mr-4">
+            <div className="navbar-end space-x-4 mr-4">
                 <div
-                    className="btn btn-ghost bg-indigo-100 hover:bg-indigo-200 text-indigo-500 rounded-full"
+                    className="btn btn-ghost grid place-items-center"
                     onClick={() => setToggle(!toggle)}
                 >
                     {toggle ? (
-                        <FaMoon className="w-4 h-4" />
+                        <FaMoon className="w-6 h-6" />
                     ) : (
-                        <FaSun className="w-4 h-4" />
+                        <FaSun className="w-6 h-6" />
                     )}
                 </div>
                 <div className="btn btn-ghost  bg-indigo-100 rounded-full text-indigo-600 hover:bg-indigo-200">
