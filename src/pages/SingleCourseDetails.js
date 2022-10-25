@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { GiRoundStar } from 'react-icons/gi';
-import { FaInfoCircle, FaGlobe, FaCheck, FaFilePdf } from 'react-icons/fa';
+import { FaInfoCircle, FaGlobe, FaCheck } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { TbPoint } from 'react-icons/tb';
+import { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SingleCourseDetails = () => {
     const course = useLoaderData();
@@ -31,11 +34,24 @@ const SingleCourseDetails = () => {
         ratings.push(<GiRoundStar key={i} />);
     }
 
+    const pdfRef = useRef();
+
+    const handlePrint = useReactToPrint({
+        content: () => pdfRef.current,
+        documentTitle: `${title}`,
+        // onAfterPrint: toast.success('PDF Download Successfully!'),
+    });
+
     return (
         <div>
             <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
                 {/* details section */}
-                <div className="col-span-1 md:col-span-2">
+
+                <div
+                    ref={pdfRef}
+                    // style={{ width: '100%', height: window.innerHeight }}
+                    className="col-span-1 md:col-span-2"
+                >
                     <div className="p-5 bg-indigo-100 rounded-lg shadow-md">
                         <h1 className="mb-3 text-xl font-extrabold lg:text-4xl">
                             {title}
@@ -136,6 +152,12 @@ const SingleCourseDetails = () => {
                             Description
                         </h1>
                         <p className="text-gray-500">{desc}</p>
+                        <button
+                            className="w-full px-5 py-3 mt-5 font-semibold text-white transition-all duration-300 bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 md:w-auto"
+                            onClick={handlePrint}
+                        >
+                            Download PDF
+                        </button>
                     </div>
                 </div>
                 {/* pricing section */}
@@ -156,6 +178,7 @@ const SingleCourseDetails = () => {
                     </Link>
                 </div>
             </div>
+            <Toaster position="top-center" reverseOrder={false} />
         </div>
     );
 };
