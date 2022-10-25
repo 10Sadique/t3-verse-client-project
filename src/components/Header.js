@@ -28,7 +28,7 @@ const Header = () => {
                 to={`/courses`}
                 className={({ isActive }) =>
                     isActive
-                        ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
+                        ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-xl md:rounded-md'
                         : 'font-semibold py-3 px-5 md:py-2 md:px-3'
                 }
             >
@@ -38,7 +38,7 @@ const Header = () => {
                 to={`/blog`}
                 className={({ isActive }) =>
                     isActive
-                        ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
+                        ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-xl md:rounded-md'
                         : 'font-semibold py-3 px-5 md:py-2 md:px-3'
                 }
             >
@@ -48,7 +48,7 @@ const Header = () => {
                 to={`/faq`}
                 className={({ isActive }) =>
                     isActive
-                        ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
+                        ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-xl md:rounded-md'
                         : 'font-semibold py-3 px-5 md:py-2 md:px-3'
                 }
             >
@@ -66,7 +66,7 @@ const Header = () => {
                     to={`/signin`}
                     className={({ isActive }) =>
                         isActive
-                            ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
+                            ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-xl md:rounded-md'
                             : 'font-semibold py-3 px-5 md:py-2 md:px-3'
                     }
                 >
