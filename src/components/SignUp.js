@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider';
 
 const SignUp = () => {
+    const [error, setError] = useState('');
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const to = location.state?.from?.pathname || '/';
+
+    const {
+        createUser,
+        updateUserProfile,
+        googleSignIn,
+        githubSignIN,
+        setLoading,
+    } = useContext(AuthContext);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -12,12 +28,37 @@ const SignUp = () => {
         const image = form.image.value;
         const password = form.password.value;
 
-        console.log(name, email, image, password);
+        createUser(email, password)
+            .then((result) => {
+                const user = result.user;
+                updateUserProfile(name, image)
+                    .then(() => {
+                        console.log('Name and Image Updated.');
+                    })
+                    .catch((err) => {
+                        setError(err.message);
+                        console.error(err);
+                    });
+                console.log(user);
+                setError('');
+                form.reset();
+                navigate(to, { replace: true });
+            })
+            .catch((err) => {
+                setError(err.message);
+                console.error(err);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     };
+
+    const handleGoogleSingIn = () => {};
+    const handleGithubSignIn = () => {};
 
     return (
         <div>
-            <h1 className="mb-10 text-4xl text-center font-bebas">Sign Up</h1>
+            <h1 className="mb-10 text-4xl font-bold text-center">Sign Up</h1>
             <div className="md:w-[40%] w-full bg-gray-100 text-gray-800 font-semibold px-5 py-5 rounded-lg mx-auto">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-5 space-y-2">
@@ -72,9 +113,9 @@ const SignUp = () => {
                             className="w-full px-4 py-3 bg-white rounded shadow-sm"
                         />
                     </div>
-                    {/* {error && (
+                    {error && (
                         <p className="text-red-500">{error?.slice(9, -1)}</p>
-                    )} */}
+                    )}
                     <button
                         type="submit"
                         className="w-full px-5 py-3 text-white bg-indigo-600 rounded shadow-md"

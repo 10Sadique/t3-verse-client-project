@@ -37,7 +37,7 @@ const AuthProvider = ({ children }) => {
 
     const logOut = () => {
         setLoading(true);
-        return signOut();
+        return signOut(auth);
     };
 
     const updateUserProfile = (name, image) => {
@@ -78,6 +78,7 @@ const AuthProvider = ({ children }) => {
         updateUserProfile,
         googleSignIn,
         githubSignIN,
+        setLoading,
     };
 
     return (

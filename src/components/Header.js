@@ -1,14 +1,27 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import { FaUserAlt, FaMoon, FaSun } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
+import { error } from 'daisyui/src/colors/colorNames';
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+    const navigate = useNavigate();
 
     const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log('Signed OUT!!');
+                navigate('/');
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    };
 
     const navLinks = (
         <div className="flex flex-col md:items-center md:flex-row">
@@ -44,11 +57,8 @@ const Header = () => {
             </NavLink>
             {user?.uid ? (
                 <NavLink
-                    className={({ isActive }) =>
-                        isActive
-                            ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-md'
-                            : 'font-semibold py-3 px-5 md:py-2 md:px-3'
-                    }
+                    onClick={handleLogOut}
+                    className="px-5 py-3 font-semibold md:py-2 md:px-3"
                 >
                     Sign Out
                 </NavLink>
@@ -118,8 +128,21 @@ const Header = () => {
                 >
                     {toggle ? <FaMoon /> : <FaSun />}
                 </div>
-                <div className="grid w-10 h-10 text-indigo-600 bg-indigo-100 rounded-full cursor-pointer place-items-center">
-                    <FaUserAlt />
+                <div className="grid w-10 h-10 overflow-hidden text-indigo-600 bg-indigo-100 rounded-full cursor-pointer place-items-center">
+                    {user?.photoURL ? (
+                        <div
+                            className="w-full h-full"
+                            title={`${user.displayName}`}
+                        >
+                            <img
+                                className="object-cover w-full h-full"
+                                src={user?.photoURL}
+                                alt=""
+                            />
+                        </div>
+                    ) : (
+                        <FaUserAlt />
+                    )}
                 </div>
             </div>
         </div>
