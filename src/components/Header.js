@@ -7,6 +7,7 @@ import { AuthContext } from '../contexts/AuthProvider';
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+
     const navigate = useNavigate();
 
     const { user, logOut } = useContext(AuthContext);
@@ -14,8 +15,8 @@ const Header = () => {
     const handleLogOut = () => {
         logOut()
             .then(() => {
+                // navigate('/');
                 console.log('Signed OUT!!');
-                navigate('/');
             })
             .catch((err) => {
                 console.error(err);

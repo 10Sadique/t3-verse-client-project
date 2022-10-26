@@ -10,9 +10,10 @@ import { useReactToPrint } from 'react-to-print';
 
 const SingleCourseDetails = () => {
     const course = useLoaderData();
+    // const navigate = useNavigate();
 
     const {
-        // id,
+        id,
         title,
         title_desc,
         author,
@@ -41,6 +42,8 @@ const SingleCourseDetails = () => {
         documentTitle: `${title}`,
         // onAfterPrint: toast.success('PDF Download Successfully!'),
     });
+
+    // const handleCheckOut = () => {};
 
     return (
         <div>
@@ -165,16 +168,17 @@ const SingleCourseDetails = () => {
                             {duration} on demand videos!
                         </p>
                     </div>
-                    <Link>
-                        <button className="w-full py-3 mt-5 font-semibold text-white transition-all duration-300 bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700">
+                    <Link to={`/checkout/${id}`}>
+                        <button
+                            // onClick={handleCheckOut}
+                            className="w-full py-3 mt-5 font-semibold text-white transition-all duration-300 bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700"
+                        >
                             Get Premium Access
                         </button>
                     </Link>
                 </div>
             </div>
-            <div
-                className="grid place-items-center"
-            >
+            <div className="grid place-items-center">
                 <button
                     className="w-full px-5 py-3 mx-auto mt-5 font-semibold text-white transition-all duration-300 bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 md:w-auto"
                     onClick={handlePrint}
