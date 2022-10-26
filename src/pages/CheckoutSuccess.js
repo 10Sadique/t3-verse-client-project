@@ -5,7 +5,7 @@ const CheckoutSuccess = () => {
     const course = useLoaderData();
     const { id, title } = course;
     return (
-        <div className="h-[30vh] text-center">
+        <div className="h-[50vh] md:h-[30vh] text-center">
             <h1 className="mb-10 text-lg font-semibold">
                 Thank You for purchasing{' '}
                 <span className="text-indigo-600">{title}</span>

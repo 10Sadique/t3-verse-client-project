@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { GiRoundStar } from 'react-icons/gi';
-import { FaInfoCircle, FaGlobe, FaCheck } from 'react-icons/fa';
+import { FaInfoCircle, FaGlobe, FaCheck, FaFileDownload } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { TbPoint } from 'react-icons/tb';
 import { useRef } from 'react';
@@ -180,10 +180,11 @@ const SingleCourseDetails = () => {
             </div>
             <div className="grid place-items-center">
                 <button
-                    className="w-full px-5 py-3 mx-auto mt-5 font-semibold text-white transition-all duration-300 bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 md:w-auto"
+                    className="absolute top-0 md:top-1 right-4 md:right-2 flex items-center gap-3 px-5 py-3 mx-auto mt-[70px] font-semibold text-white transition-all duration-300 bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 md:w-auto"
                     onClick={handlePrint}
                 >
-                    Download PDF
+                    <span>PDF</span>
+                    <FaFileDownload />
                 </button>
             </div>
         </div>

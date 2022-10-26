@@ -64,16 +64,28 @@ const Header = () => {
                     Sign Out
                 </NavLink>
             ) : (
-                <NavLink
-                    to={`/signin`}
-                    className={({ isActive }) =>
-                        isActive
-                            ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-xl md:rounded-md'
-                            : 'font-semibold py-3 px-5 md:py-2 md:px-3'
-                    }
-                >
-                    Sign In
-                </NavLink>
+                <div className="flex flex-col md:flex-row">
+                    <NavLink
+                        to={`/signin`}
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-xl md:rounded-md'
+                                : 'font-semibold py-3 px-5 md:py-2 md:px-3'
+                        }
+                    >
+                        Sign In
+                    </NavLink>
+                    <NavLink
+                        to={`/signup`}
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'font-semibold py-3 px-5 md:py-2 md:px-3 bg-indigo-700 rounded-xl md:rounded-md'
+                                : 'font-semibold py-3 px-5 md:py-2 md:px-3'
+                        }
+                    >
+                        Sign Up
+                    </NavLink>
+                </div>
             )}
         </div>
     );
