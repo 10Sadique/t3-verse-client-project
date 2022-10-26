@@ -53,6 +53,7 @@ const SignIn = () => {
                 setLoading(false);
             });
     };
+
     const handleGithubSignIn = () => {
         githubSignIN()
             .then((result) => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import { FaUserAlt, FaMoon, FaSun } from 'react-icons/fa';
 import { useContext } from 'react';
@@ -8,7 +8,7 @@ import { AuthContext } from '../contexts/AuthProvider';
 const Header = () => {
     const [toggle, setToggle] = useState(false);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const { user, logOut } = useContext(AuthContext);
 
@@ -53,7 +53,7 @@ const Header = () => {
                         : 'font-semibold py-3 px-5 md:py-2 md:px-3'
                 }
             >
-                FAQ
+                FAQs
             </NavLink>
             {user?.uid ? (
                 <NavLink

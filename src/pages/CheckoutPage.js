@@ -28,7 +28,7 @@ const CheckoutPage = () => {
             </div>
             <Link to={`/checkout/success/${id}`}>
                 <button className="w-full py-2 mt-5 text-white transition-all duration-300 bg-indigo-600 rounded-md shadow-md hover:bg-indigo-700">
-                    Checkout
+                    Proceed Checkout
                 </button>
             </Link>
         </div>
