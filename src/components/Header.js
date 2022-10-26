@@ -145,20 +145,21 @@ const Header = () => {
                     {user?.photoURL ? (
                         <div
                             className="w-full h-full"
-                            data-tip={`${user.displayName}`}
+                            data-tip={`${user?.displayName}`}
+                            data-place="left"
                         >
                             <img
                                 className="object-cover w-full h-full"
                                 src={user?.photoURL}
                                 alt=""
                             />
+                            <ReactTooltip />
                         </div>
                     ) : (
                         <FaUserAlt />
                     )}
                 </div>
             </div>
-            <ReactTooltip />
         </div>
     );
 };

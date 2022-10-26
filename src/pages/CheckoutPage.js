@@ -21,7 +21,7 @@ const CheckoutPage = () => {
                     <p>Tax:</p>
                     <p>{(price * 0.1).toFixed(2)}</p>
                 </div>
-                <div className="flex items-center justify-between py-3 text-lg">
+                <div className="flex items-center justify-between py-3 text-lg text-indigo-600">
                     <p>Total:</p>
                     <p>{price + parseFloat((price * 0.1).toFixed(2))}</p>
                 </div>
