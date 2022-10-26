@@ -4,6 +4,7 @@ import logo from '../assets/logo.svg';
 import { FaUserAlt, FaMoon, FaSun } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
+import ReactTooltip from 'react-tooltip';
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
@@ -132,7 +133,7 @@ const Header = () => {
                     {user?.photoURL ? (
                         <div
                             className="w-full h-full"
-                            title={`${user.displayName}`}
+                            data-tip={`${user.displayName}`}
                         >
                             <img
                                 className="object-cover w-full h-full"
@@ -145,6 +146,7 @@ const Header = () => {
                     )}
                 </div>
             </div>
+            <ReactTooltip />
         </div>
     );
 };
